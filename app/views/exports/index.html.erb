@@ -1,0 +1,23 @@
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px 50px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.button1 {background-color: #4CAF50}
+.button2 {background-color: red}
+</style>
+</head>
+<body>
+
+<%= link_to "Normal CSV Download", normal_csv_exports_path(format: :csv), class: 'button button1'%>
+<%= link_to "Streaming CSV Download", stream_csv_exports_path(format: :csv), class: 'button button2'%>
