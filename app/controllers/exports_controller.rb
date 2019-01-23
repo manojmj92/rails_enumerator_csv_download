@@ -34,11 +34,11 @@ class ExportsController < ApplicationController
     end
   end
 
-  def generate_streaming_csv(column_names, klass)
+  def generate_streaming_csv(column_names, records)
     Enumerator.new do |csv|
       csv << column_names.to_csv # add headers to the CSV
 
-      klass.each do |record|
+      records.each do |record|
         csv << record.attributes.values_at(*column_names).to_csv
       end
     end
